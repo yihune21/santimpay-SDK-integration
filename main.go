@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"santimpay-api/config"
 	"santimpay-api/handlers"
@@ -30,6 +29,6 @@ func main() {
 	log.Printf("🚀 Santim Pay API Server starting on port %s in %s mode", cfg.ServerPort, mode)
 	
 	if err := router.Run(":" + cfg.ServerPort); err != nil {
-		log.Fatal(fmt.Sprintf("Failed to start server: %v", err))
+		log.Fatalf("Failed to start server: %v", err)
 	}
 }
